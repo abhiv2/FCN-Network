@@ -11,7 +11,7 @@
             <div class="logo-img">
                 <img src="static/img/cio.png" alt="">
             </div>
-          FOGLOG
+          FCN network
         </a>
       </div>
       <slot>

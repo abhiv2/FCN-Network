@@ -50,7 +50,7 @@
         var color = Math.floor((Math.random() * 4) + 1)
         this.$notifications.notify(
           {
-            message: 'Welcome to <b>FOGLOG</b> - a beautiful fog computing marketplace.',
+            message: 'Welcome to <b>FCN network</b> - a beautiful fog computing marketplace.',
             icon: 'ti-gift',
             horizontalAlign: horizontalAlign,
             verticalAlign: verticalAlign,

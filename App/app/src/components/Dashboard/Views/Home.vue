@@ -4,15 +4,15 @@
     <div class="card">
       <div class="header">
         
-        <h2 class="">FOGLOG</h2>
+        <h2 class="">FCN network</h2>
         <!-- <img src='static/img/2.jpg' /> -->
         <div class="alert alert-info">
-        <p> FOGLOG is a computing power marketplace.</p>
+        <p> FCN network is a computing power marketplace.</p>
         <p>We make it easier for hardware owners to rent out their resources and provide the world with affordable computing power.</p>
 
          <p>Now anyone can share their computation with others and make some extra money</p>
 
-        <p>FOGLOG enables users and applications (requestors) to rent out cycles of other users’ (providers) machines. Any user ranging from a single PC owner to a large data center can share resources and get paid by requestors.</p>
+        <p>FCN network enables users and applications (requestors) to rent out cycles of other users’ (providers) machines. Any user ranging from a single PC owner to a large data center can share resources and get paid by requestors.</p>
         </div>
 
            <h4>Get started - </h4>
