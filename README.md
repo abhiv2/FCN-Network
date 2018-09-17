@@ -62,3 +62,18 @@ buyer board
 
 seller board
 ![](screen/4.png)
+
+
+### Use cases - 
+People can share computing resources to carry out tasks like 
+- Machine Learning models
+- Big data computation 
+- Video and graphics rendering
+- Cloud infrastructure for applications
+
+### Tech Stack used
+- Blockchain - QTUM
+- Smart contracts - Solidity
+- Backend API for data storage - Python-Flask
+- Frontend application- VueJs + Vue-router + QtumJS
+- Linux script for computations - Shellscript + NodeJS
