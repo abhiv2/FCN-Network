@@ -18,6 +18,7 @@
     "chartist": "^0.10.1",
     "fs": "0.0.1-security",
     "net": "^1.0.2",
+    "qtumjs": "^1.9.1",
     "request": "^2.88.0",
     "tls": "0.0.1",
     "v-click-outside": "0.0.8",
