@@ -38,22 +38,13 @@ cp $1.zip ../../Api/results
 
 echo "#########################################"
 echo "initiating transaction"
-#cd ..
-#node compute.js $2
 
-
-echo '{
-	"data" : "$1.zip"
-}' |  \
-  http POST http://127.0.0.1:8000/claim \
-  Cache-Control:no-cache \
-  Content-Type:application/json \
-  Postman-Token:dcc1b220-2960-42a1-9934-73475ad822be
-
+cd ..
+node compute.js $2
 
 echo "#########################################"
 echo "end "
-cd ..
+
 rm -r data
 
 
