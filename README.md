@@ -46,19 +46,6 @@ npm install
 ./compute.sh <order-id> <private-key>
 ```
 
-### Youtube video - 
-[FCN Network](http://)
-
-### Screenshot -
- Home
-![](screen/1.png)
- Market Listings
-![](screen/2.png)
- buyer board
-![](screen/3.png)
- seller board
-![](screen/4.png)
- 
 ### Use cases - 
 People can share computing resources to carry out tasks like 
 - Machine Learning models
@@ -72,3 +59,17 @@ People can share computing resources to carry out tasks like
 - Backend API for data storage - Python-Flask
 - Frontend application- VueJs + Vue-router + QtumJS
 - Linux script for computations - Shellscript + NodeJS
+
+### Youtube video - 
+[FCN Network](http://)
+
+### Screenshot -
+ Home
+![](screen/1.png)
+ Market Listings
+![](screen/2.png)
+ buyer board
+![](screen/3.png)
+ seller board
+![](screen/4.png)
+ 
