@@ -2,12 +2,24 @@ import {
   Qtum,
 } from "qtumjs"
 
-const repoData = require("./solar.json")
-const qtum = new Qtum("http://qtum:test@localhost:3889", repoData)
+
+import abi from 'ethjs-abi'
+import { networks } from 'qtumjs-wallet'
+
+
+const domain = 'http://qtum:test@localhost:3889'
+
+const qtum = new Qtum(domain)
+
+const apiPrefix = domain + '/insight-api'
+const config = {
+  fee: 0.01,
+  gasPrice: 50,
+  gasLimit: 3000000
+}
 
 const mywallet = process.argv[2]
 const contract_address = 'QecTRme3nR2CqG448vAXqf6YuWj8LW1DGb'
-const myToken = qtum.contract(".sol")
 var abi = [
 	{
 		"constant": true,
@@ -358,12 +370,47 @@ var abi = [
 
 
 
-const constract = qtum.contract(contract_address, abi)
+const contract = qtum.contract(contract_address, abi)
 
+
+
+
+try {
+    const decoded = parseAbi(blockpost.abi)
+    const index = getIndex(decoded, 'claim')
+ 
+    const wallet = networks.testnet.fromWIF(wif)
+    const signedTx = await wallet.generateContractSendTx(CONTRACT_ADDRESS, encodedData)
+    const { txid } = await wallet.sendRawTx(signedTx)
+  
+    return txid
+  }
+  catch (exc) {
+    throw `something went wrong: ${exc}`
+  }
 
 (async function claim() {
+ 
+  try {
+    
+	const { executionResult } = await contract.contractCall(CONTRACT_ADDRESS, encodedData, { gasLimit })
+	executionResult.jobClaim.call(process.args[2], transact={'from' :mywallet, 'to' : contact_address, gas: config.gasLimit })
 
-  const result = await myToken.methods.jobClaim.call(process.args[2], transact={'from' :mywallet, 'to' : contact_address, gas: 400000000 })
-	reciept
-	console.log('success!!')
+    return executionResult.gasUsed
+  }
+  catch (exc) {
+    throw `something went wrong: ${exc}`
+  }
+})();
+
+
+
+
+(async function check_tx_status() {
+  const { data } = await axios.get(`${QTUM_TESTNET}/insight-api/sync`)
+  
+  if (data.status !== 'finished')
+    throw 'cant get current blockchain height.'
+
+  return data.signedTx
 })();

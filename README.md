@@ -47,33 +47,7 @@ npm install
 ```
 
 ### Youtube video - 
-[Demo on Youtube](https://www.youtube.com/watch?v=BiC3oncw0mc&t=4s)
+[FCN Network](http://)
 
 ### Screenshot - 
-
-Home
-![](screen/1.png)
-
-Market Listings
-![](screen/2.png)
-
-buyer board
-![](screen/3.png)
-
-seller board
-![](screen/4.png)
-
-
-### Use cases - 
-People can share computing resources to carry out tasks like 
-- Machine Learning models
-- Big data computation 
-- Video and graphics rendering
-- Cloud infrastructure for applications
-
-### Tech Stack used
-- Blockchain - QTUM
-- Smart contracts - Solidity
-- Backend API for data storage - Python-Flask
-- Frontend application- VueJs + Vue-router + QtumJS
-- Linux script for computations - Shellscript + NodeJS
+(1)[screen/1.jpg]
