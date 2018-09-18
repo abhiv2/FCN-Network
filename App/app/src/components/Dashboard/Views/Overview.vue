@@ -1,170 +1,73 @@
 <template>
-  <div>
+ <div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header">
+        
+        <h2 class="">FCN network</h2>
+        <!-- <img src='static/img/2.jpg' /> -->
+        <div class="alert alert-info">
+        <p> FCN network is a computing power marketplace.</p>
+        <p>We make it easier for hardware owners to rent out their resources and provide the world with affordable computing power.</p>
 
-    <!--Stats cards-->
-    <div class="row">
-      <div class="col-lg-3 col-sm-6" v-for="stats in statsCards">
-        <stats-card>
-          <div class="icon-big text-center" :class="`icon-${stats.type}`" slot="header">
-            <i :class="stats.icon"></i>
+         <p>Now anyone can share their computation with others and make some extra money</p>
+
+        <p>FCN network enables users and applications (requestors) to rent out cycles of other users’ (providers) machines. Any user ranging from a single PC owner to a large data center can share resources and get paid by requestors.</p>
+        </div>
+
+           <h4>Get started - </h4>
+          <h5>Rent computation-</h5>
+          <div class="alert alert-info">
+          <h5>Have some extra harware sitting around ? <br/> Rent your computers to someone and earn FOG tokens
+          </h5>
           </div>
-          <div class="numbers" slot="content">
-            <p>{{stats.title}}</p>
-            {{stats.value}}
-          </div>
-          <div class="stats" slot="footer">
-            <i :class="stats.footerIcon"></i> {{stats.footerText}}
-          </div>
-        </stats-card>
+          <a href="http://localhost:8080/#/admin/rent">Setup computation script</a>
+          <br>
+          <a href="http://localhost:8080/#/admin/market">Search marketplace and pick orders for rental </a>
+
+          
+          <a>Search marketplace and pick orders for rental </a>
+          
+          
+          <h5>Buy computation -</h5>
+          <div class="alert alert-info">
+          <h5>Have some extra computation but not enough computation power?</h5>
+           </div>
+           <a href="http://localhost:8080/#/admin/buy">Setup a computation order now! </a>
+         
+           <h3>
+          With the power of decentralization of QTUM, we will revolutionize Fog computing
+
+        </h3>
+
+          <img src='static/img/1.jpg'/>
+
+        
+       
+          <blockquote>
+            <p>
+              I dont need a hard disk in my computer if I can get to the server faster.. carrying around these non-connected  computers is byzantine by comparison.
+            </p>
+            <small>
+              Steve Jobs, CEO Apple
+            </small>
+          </blockquote>
+      
+      </div>
+      <div class="content">
+       
       </div>
     </div>
-
-    <!--Charts-->
-    <div class="row">
-
-      <div class="col-xs-12">
-        <chart-card :chart-data="usersChart.data" :chart-options="usersChart.options">
-          <h4 class="title" slot="title">Users behavior</h4>
-          <span slot="subTitle"> 24 Hours performance</span>
-          <span slot="footer">
-            <i class="ti-reload"></i> Updated 3 minutes ago</span>
-          <div slot="legend">
-            <i class="fa fa-circle text-info"></i> Open
-            <i class="fa fa-circle text-danger"></i> Click
-            <i class="fa fa-circle text-warning"></i> Click Second Time
-          </div>
-        </chart-card>
-      </div>
-
-      <div class="col-md-6 col-xs-12">
-        <chart-card :chart-data="preferencesChart.data"  chart-type="Pie">
-          <h4 class="title" slot="title">Email Statistics</h4>
-          <span slot="subTitle"> Last campaign performance</span>
-          <span slot="footer">
-            <i class="ti-timer"></i> Campaign set 2 days ago</span>
-          <div slot="legend">
-            <i class="fa fa-circle text-info"></i> Open
-            <i class="fa fa-circle text-danger"></i> Bounce
-            <i class="fa fa-circle text-warning"></i> Unsubscribe
-          </div>
-        </chart-card>
-      </div>
-
-      <div class="col-md-6 col-xs-12">
-        <chart-card :chart-data="activityChart.data" :chart-options="activityChart.options">
-          <h4 class="title" slot="title">2015 Sales</h4>
-          <span slot="subTitle"> All products including Taxes</span>
-          <span slot="footer">
-            <i class="ti-check"></i> Data information certified</span>
-          <div slot="legend">
-            <i class="fa fa-circle text-info"></i> Tesla Model S
-            <i class="fa fa-circle text-warning"></i> BMW 5 Series
-          </div>
-        </chart-card>
-      </div>
-
-    </div>
-
   </div>
+ </div>
 </template>
 <script>
-  import StatsCard from 'components/UIComponents/Cards/StatsCard.vue'
-  import ChartCard from 'components/UIComponents/Cards/ChartCard.vue'
-  export default {
-    components: {
-      StatsCard,
-      ChartCard
-    },
-    /**
-     * Chart data used to render stats, charts. Should be replaced with server data
-     */
-    data () {
-      return {
-        statsCards: [
-          {
-            type: 'warning',
-            icon: 'ti-server',
-            title: 'Capacity',
-            value: '105GB',
-            footerText: 'Updated now',
-            footerIcon: 'ti-reload'
-          },
-          {
-            type: 'success',
-            icon: 'ti-wallet',
-            title: 'Revenue',
-            value: '$1,345',
-            footerText: 'Last day',
-            footerIcon: 'ti-calendar'
-          },
-          {
-            type: 'danger',
-            icon: 'ti-pulse',
-            title: 'Errors',
-            value: '23',
-            footerText: 'In the last hour',
-            footerIcon: 'ti-timer'
-          },
-          {
-            type: 'info',
-            icon: 'ti-twitter-alt',
-            title: 'Followers',
-            value: '+45',
-            footerText: 'Updated now',
-            footerIcon: 'ti-reload'
-          }
-        ],
-        usersChart: {
-          data: {
-            labels: ['9:00AM', '12:00AM', '3:00PM', '6:00PM', '9:00PM', '12:00PM', '3:00AM', '6:00AM'],
-            series: [
-              [287, 385, 490, 562, 594, 626, 698, 895, 952],
-              [67, 152, 193, 240, 387, 435, 535, 642, 744],
-              [23, 113, 67, 108, 190, 239, 307, 410, 410]
-            ]
-          },
-          options: {
-            low: 0,
-            high: 1000,
-            showArea: true,
-            height: '245px',
-            axisX: {
-              showGrid: false
-            },
-            lineSmooth: this.$Chartist.Interpolation.simple({
-              divisor: 3
-            }),
-            showLine: true,
-            showPoint: false
-          }
-        },
-        activityChart: {
-          data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-            series: [
-              [542, 543, 520, 680, 653, 753, 326, 434, 568, 610, 756, 895],
-              [230, 293, 380, 480, 503, 553, 600, 664, 698, 710, 736, 795]
-            ]
-          },
-          options: {
-            seriesBarDistance: 10,
-            axisX: {
-              showGrid: false
-            },
-            height: '245px'
-          }
-        },
-        preferencesChart: {
-          data: {
-            labels: ['62%', '32%', '6%'],
-            series: [62, 32, 6]
-          },
-          options: {}
-        }
-
-      }
-    }
+import axios from 'axios'
+export default {
+  created () {
+   
   }
+}
 
 </script>
 <style>
